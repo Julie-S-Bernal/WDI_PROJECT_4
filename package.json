@@ -9,14 +9,15 @@
   },
   "scripts": {
     "postinstall": "yarn build",
-    "start": "node index",
     "start:client": "webpack-dev-server",
     "start:server": "nodemon",
     "build": "webpack -p",
     "seed": "node db/seeds",
-    "test:client": "node_modules/.bin/_mocha test/client/helper \"test/client/**/*_test.js\"",
+    "test:client":
+      "node_modules/.bin/_mocha test/client/helper \"test/client/**/*_test.js\"",
     "test:server": "node_modules/.bin/_mocha \"test/api/**/*_test.js\"",
-    "test": "yarn test:server && yarn test:client"
+    "test": "yarn test:server && yarn test:client",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -57,10 +58,13 @@
     "enzyme-adapter-react-15": "^1.0.2",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.29.0",
+    "husky": "^0.14.3",
     "istanbul": "^0.4.5",
     "jsdom": "^11.3.0",
+    "lint-staged": "^6.0.0",
     "mocha": "^3.3.0",
     "node-sass": "^4.5.3",
+    "prettier": "1.9.2",
     "react-test-renderer": "15",
     "sass-loader": "^6.0.6",
     "sinon": "^4.0.1",
@@ -69,5 +73,8 @@
     "url-loader": "^0.5.9",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.5.1"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
   }
 }
