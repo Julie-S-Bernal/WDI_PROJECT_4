@@ -1,15 +1,15 @@
-import React             from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 
-import Login    from '../auth/Login';
-import Register from '../auth/Register';
+import Login from "../auth/Login";
+import Register from "../auth/Register";
 
-import TravelsIndex from '../travels/TravelsIndex';
-import TravelsShow  from  '../travels/TravelsShow';
-import TravelsNew   from '../travels/TravelsNew';
-import TravelsEdit  from '../travels/TravelsEdit';
+import TravelsIndex from "../travels/TravelsIndex";
+import TravelsShow from "../travels/TravelsShow";
+import TravelsNew from "../travels/TravelsNew";
+import TravelsEdit from "../travels/TravelsEdit";
 
-import ProtectedRoute from './ProtectedRoute';
+import ProtectedRoute from "./ProtectedRoute";
 
 const Routes = () => {
   return (

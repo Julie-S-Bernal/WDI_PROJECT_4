@@ -1,18 +1,14 @@
-import React from 'react';
-import currencyList from '../../lib/currencyList';
-import {TextField} from 'material-ui';
-import Select from 'material-ui/Select';
-import { FormControl } from 'material-ui/Form';
-import Button from 'material-ui/Button';
-import Input, { InputLabel } from 'material-ui/Input';
-
-
+import React from "react";
+import currencyList from "../../lib/currencyList";
+import { TextField } from "material-ui";
+import Select from "material-ui/Select";
+import { FormControl } from "material-ui/Form";
+import Button from "material-ui/Button";
+import Input, { InputLabel } from "material-ui/Input";
 
 const RegisterForm = ({ handleChange, handleSubmit, user }) => {
   return (
-
-
-    <form className ="loginForm"  onSubmit={handleSubmit}>
+    <form className="loginForm" onSubmit={handleSubmit}>
       <div className="form-group">
         <TextField
           type="text"
@@ -63,7 +59,11 @@ const RegisterForm = ({ handleChange, handleSubmit, user }) => {
             className="form-control"
             input={<Input name="currency" id="currency-code-native" />}
           >
-            {currencyList.map(currency => <option key={currency.code} value={currency.code}>{currency.name}</option>)}
+            {currencyList.map(currency => (
+              <option key={currency.code} value={currency.code}>
+                {currency.name}
+              </option>
+            ))}
           </Select>
         </FormControl>
       </div>
@@ -128,10 +128,11 @@ const RegisterForm = ({ handleChange, handleSubmit, user }) => {
         />
       </div>
 
-      <Button type="submit" className="btn btn-primary buttonColor">Register</Button>
+      <Button type="submit" className="btn btn-primary buttonColor">
+        Register
+      </Button>
     </form>
   );
-
 };
 
 export default RegisterForm;

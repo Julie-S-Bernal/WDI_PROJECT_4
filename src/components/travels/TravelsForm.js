@@ -1,16 +1,14 @@
-import React from 'react';
-import currencyList from '../../lib/currencyList';
-import countryList from '../../lib/countryList';
-import {TextField} from 'material-ui';
-import { FormControl } from 'material-ui/Form';
-import Select from 'material-ui/Select';
-import Input, { InputLabel } from 'material-ui/Input';
-import Button from 'material-ui/Button';
-import { DatePicker } from 'material-ui-pickers';
-import {ArrowBack, ArrowForward}  from 'material-ui-icons';
-import BackButton from '../utility/BackButton';
-
-
+import React from "react";
+import currencyList from "../../lib/currencyList";
+import countryList from "../../lib/countryList";
+import { TextField } from "material-ui";
+import { FormControl } from "material-ui/Form";
+import Select from "material-ui/Select";
+import Input, { InputLabel } from "material-ui/Input";
+import Button from "material-ui/Button";
+import { DatePicker } from "material-ui-pickers";
+import { ArrowBack, ArrowForward } from "material-ui-icons";
+import BackButton from "../utility/BackButton";
 
 const TravelsForm = ({
   handleChange,
@@ -31,7 +29,6 @@ const TravelsForm = ({
           returnMoment
           leftArrowIcon={<ArrowBack />}
           rightArrowIcon={<ArrowForward />}
-
         />
         {errors.name && <small>{errors.name}</small>}
       </div>
@@ -55,7 +52,11 @@ const TravelsForm = ({
             onChange={handleChange}
             input={<Input name="country" id="country-name-native" />}
           >
-            { countryList.map(cur => <option  key={cur.image} value={cur.name}>{cur.name}</option>) }
+            {countryList.map(cur => (
+              <option key={cur.image} value={cur.name}>
+                {cur.name}
+              </option>
+            ))}
           </Select>
         </FormControl>
         {errors.name && <small>{errors.name}</small>}
@@ -69,7 +70,11 @@ const TravelsForm = ({
             onChange={handleChange}
             input={<Input name="currency" id="currency-code-native" />}
           >
-            { currencyList.map(cur => <option  key={cur.code} value={cur.code}>{cur.name}</option>) }
+            {currencyList.map(cur => (
+              <option key={cur.code} value={cur.code}>
+                {cur.name}
+              </option>
+            ))}
           </Select>
         </FormControl>
         {errors.name && <small>{errors.name}</small>}
@@ -119,7 +124,6 @@ const TravelsForm = ({
         {errors.name && <small>{errors.name}</small>}
       </div>
       <div className="form-group">
-
         <TextField
           label="Transportation Cost"
           name="transportation"
@@ -129,15 +133,14 @@ const TravelsForm = ({
           className="form-control"
         />
 
-
         {errors.name && <small>{errors.name}</small>}
       </div>
 
-      <Button  disabled= {formInvalid} type="submit" className="btn btn-primary">Submit</Button>
+      <Button disabled={formInvalid} type="submit" className="btn btn-primary">
+        Submit
+      </Button>
       <BackButton />
     </form>
-
-
   );
 };
 

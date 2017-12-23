@@ -1,13 +1,8 @@
-import React from 'react';
-import {TextField} from 'material-ui';
-import Button from 'material-ui/Button';
+import React from "react";
+import { TextField } from "material-ui";
+import Button from "material-ui/Button";
 
-const CostsForm = ({
-  handleChange,
-  handleSubmit,
-  travel
-
-}) => {
+const CostsForm = ({ handleChange, handleSubmit, travel }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
@@ -61,8 +56,9 @@ const CostsForm = ({
         />
       </div>
 
-
-      <Button type="submit" className="btn btn-primary">Submit</Button>
+      <Button type="submit" className="btn btn-primary">
+        Submit
+      </Button>
     </form>
   );
 };
