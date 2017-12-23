@@ -1,13 +1,11 @@
-const User = require('../models/user');
-
+const User = require("../models/user");
 
 function usersShow(req, res, next) {
-  User
-    .findById(req.params.id)
-    .populate('travels')
+  User.findById(req.params.id)
+    .populate("travels")
     .exec()
-    .then((user) => {
-      if(!user) return res.notFound();
+    .then(user => {
+      if (!user) return res.notFound();
       res.json(user);
     })
     .catch(next);
@@ -21,8 +19,6 @@ function usersShow(req, res, next) {
 //     .catch(next);
 // }
 
-
 module.exports = {
-
   show: usersShow
 };
