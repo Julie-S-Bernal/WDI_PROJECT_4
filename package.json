@@ -16,7 +16,8 @@
     "seed": "node db/seeds",
     "test:client": "node_modules/.bin/_mocha test/client/helper \"test/client/**/*_test.js\"",
     "test:server": "node_modules/.bin/_mocha \"test/api/**/*_test.js\"",
-    "test": "yarn test:server && yarn test:client"
+    "test": "yarn test:server && yarn test:client",
+    "prettier": "prettier */**/*.js --ignore-path ./.prettierignore --write && git add . && git status"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -61,6 +62,7 @@
     "jsdom": "^11.3.0",
     "mocha": "^3.3.0",
     "node-sass": "^4.5.3",
+    "prettier": "1.9.2",
     "react-test-renderer": "15",
     "sass-loader": "^6.0.6",
     "sinon": "^4.0.1",
@@ -69,5 +71,11 @@
     "url-loader": "^0.5.9",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.5.1"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
